@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital clock</title>
+
+    <style>
+      body {
+    
+        background-image: url("https://i.pinimg.com/originals/f3/5a/9d/f35a9d3c05bad3e07b68201837eb74a2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5%;
+        font-size:200%;
+        color:red;
+       
+      }
+      .clock {
+      width: 38%;
+        display: flex;
+        font-size: 90px;
+        font-weight: bold;
+        position: absolute;
+        justify-content: space-between;
+        bottom: 42%;
+        left: 28%;
+      
+        #hr{
+          background-color: blue;
+          height: 100%;
+          width: 22%;
+          display: flex;
+        
+        }      
+
+        #min{
+          background-color: blue;
+          height: 100%;
+          width: 22%;
+        }
+
+          #sec{
+          background-color: blue;
+          height: 100%;
+          width: 22%;
+      }
+      span{
+        color: blue;
+        font-size: 95%;
+      }
+      .name{
+      font-size: 80%;
+
+      }
+      
+    </style>
+  </head>
+  <body>
+
+<h1 class="name">Digital Clock</h1>
+    <div class="clock">
+      <div id="hr">10</div>
+      <span>:</span>
+
+      <div id="min">20</div>
+      <span>:</span>
+
+      <div id="sec">30</div>
+    </div>
+
+  </body>
+
+  <script>
+    const hr=document.getElementById("hr");
+    const min=document.getElementById("min");
+    const sec=document.getElementById("sec");
+   
+
+    var clock=setInterval(function time(){
+      var date=new Date();
+
+      var hr1=date.getHours();
+      var min1=date.getMinutes();
+      var sec1=date.getSeconds();
+
+    
+
+      if(hr1<10){
+        hr1="0"+hr1;
+      } 
+      if(min1<10){
+        min1="0"+min1
+      }
+
+      if(sec1<10){
+        sec1="0"+sec1
+      }
+    
+      hr.textContent=hr1
+      min.textContent=min1
+      sec.textContent=sec1
+
+    },1000);
+
+  </script>
+</html>
